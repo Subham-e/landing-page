@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: visible;
+  font-size: 18px;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* Primary */
+:root {
+  --Soft-red: hsl(7, 99%, 70%);
+  --Yellow: hsl(51, 100%, 49%);
+  --Dark-desaturated-cyan: hsl(167, 40%, 24%);
+  /* graphic design text */
+  --Dark-blue: hsl(198, 62%, 26%);
+  /*(photography text)*/
+  --Dark-moderate-cyan:#78DEC7;
+  /*(footer)*/
+}
+
+/* neutral */
+:root {
+  --Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+  --Very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --Dark-grayish-blue: hsl(232, 10%, 55%);
+  --Grayish-blue: hsl(210, 4%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --creamy-white: #F3F8FF;
+}
+
+/* basic styling */
+header {
+  height: 100vh;
+  background: url("images/mobile/image-header.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 0 2%;
+}
+
+.logo {
+  order: 1;
+  /*making logo in first position*/
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--Very-dark-grayish-blue);
+}
+
+li {
+  list-style-type: none;
+}
+
+.list-items li {
+  padding: 30px;
+  color: var(--Dark-grayish-blue);
+  font-weight: 400;
+}
+
+li.button a {
+  padding: 10px 25px;
+  border-radius: 50px;
+  background-color: var(--Yellow);
+  color: var(--Very-dark-desaturated-blue);
+  font-family: 'Fraunces', serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+/* toggle button styling */
+.toggle-div {
+  order: 2;
+  cursor: pointer;
+}
+
+.toggle {
+  height: 2px;
+  background-color: var(--White);
+  width: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+/* creating hamburger for toggle */
+.toggle:before, .toggle::after {
+  content: "";
+  height: 2px;
+  background-color: var(--White);
+  width: 20px;
+  position: absolute;
+}
+
+.toggle::before {
+  top: 5px;
+}
+
+.toggle::after {
+  top: -5px;
+}
+
+/* navbar styling */
+nav {
+  width: 100%;
+  padding: 20px 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 10vh;
+  align-items: center;
+}
+
+.list-items {
+  margin-top: 40px;
+  text-align: center;
+  flex-basis: 100%;
+  background-color: var(--White);
+  display: none;
+  position: relative;
+  order: 3;
+}
+
+/* this class will get added through js to a ul */
+.list-items-toggle {
+  display: block;
+  transition: all .3s ease;
+}
+
+/* creating arrow head of nav list */
+.list-items::before {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid var(--White);
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
+
+@media screen and (min-width:650px) {
+  .list-items {
+    margin: 0;
+    flex-basis: 30%;
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+  }
+
+  .list-items::before {
+    display: none;
+  }
+
+  .item a {
+    color: var(--White);
+  }
+
+  .item a:hover {
+    color: #E3E3E3;
+    transition: all .5s ease;
+  }
+
+  li.button a {
+    background-color: var(--White);
+  }
+
+  li.button a:hover {
+    color: var(--White);
+    background-color: rgba(225, 225, 225, .1);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+  }
+
+  .list-items li {
+    padding: 10px 15px;
+  }
+
+  .toggle-div {
+    display: none;
+  }
+
+  .logo a {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width:900px) {
+  .list-items li {
+    padding: 10px 30px;
+    ;
+  }
+}
+
+/* -----------------------main content styling ----------------------------------------------------------------------*/
+main {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--White);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width:650px) {
+  header {
+    background-image: url("images/desktop/image-header.jpg");
+  }
+
+  main h4 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width:900px) {
+  main {
+    justify-content: flex-start;
+  }
+
+  main h4 {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width:360px) {
+  main h4 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --------------------------------second page content 1 styling starts here --------------------------------------------------------------------------------*/
+.content {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto auto;
+}
+
+.content-children img {
+  height: 100%;
+}
+
+.child2, .child4 {
+  padding: 20% 10%;
+  background-color: var(--creamy-white);
+}
+
+.heading {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  margin-bottom: 7%;
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--Dark-grayish-blue);
+  margin-bottom: 7%;
+  text-align: center;
+}
+
+.footer-link {
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  width: 120px;
+  margin: auto;
+  border-bottom: 5px solid #FFE699;
+  transition: all .3s ease;
+}
+
+.footer-link:hover {
+  border-bottom: 5px solid var(--Yellow);
+}
+
+@media screen and (min-width:650px) {
+  .content {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+  }
+
+  .child1 {
+    grid-area: 1/2/2/3;
+  }
+
+  .child2, .child4 {
+    padding: 20% 10%;
+  }
+
+  .heading {
+    text-align: left;
+  }
+
+  .paragraph {
+    text-align: left;
+  }
+
+  .footer-link {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width:1080px) {
+  .child2, .child4 {
+    padding: 20%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 10%;
+  }
+
+  .paragraph {
+    margin-bottom: 10%;
+  }
+}
+
+/* ----------------------------section 2 styling starts here-------------------------------------------------- */
+.content2 {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+}
+
+.content2-children img {
+  height: 100%;
+}
+
+.content2-children {
+  position: relative;
+}
+
+.content2-children .image-text {
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  text-align: center;
+  padding: 0 2%;
+}
+
+.image-text h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  margin-bottom: 7%;
+  text-align: center;
+  color: var(--Dark-desaturated-cyan);
+  font-weight: 900;
+}
+
+.image-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--Dark-desaturated-cyan);
+  margin-bottom: 7%;
+  text-align: center;
+  font-weight: 600;
+  padding: 0 3%;
+}
+
+.text2 h4, .text2 p {
+  color: var(--Dark-blue)
+}
+
+@media screen and (min-width:650px) {
+  .content2 {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+  }
+
+  .content2-children .image-text {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    text-align: center;
+    padding: 0 2%;
+  }
+
+  .image-text h4 {
+    font-size: 1rem;
+  }
+
+  .image-text p {
+    font-size: .80rem;
+  }
+}
+
+@media screen and (min-width:750px) {
+  .image-text h4 {
+    font-size: 1.5rem;
+    margin-bottom: 4%;
+  }
+
+  .image-text p {
+    font-size: 1rem;
+    margin-bottom: 4%;
+    padding: 0 5%;
+  }
+}
+
+@media screen and (min-width:1080px) {
+  .image-text h4 {
+    font-size: 2rem;
+    margin-bottom: 7%;
+  }
+
+  .image-text p {
+    margin-bottom: 7%;
+    padding: 0 22%;
+  }
+}
+
+
+/* testinomimals styling starts here */
+.testinomials{
+  display:grid;
+  grid-template-columns:100%;
+  grid-template-rows: auto auto;
+  background-color: var(--creamy-white);
+}
+.testinomials-heading h4{
+   margin:auto;
+   padding:70px 0;
+   font-family: 'Fraunces', serif;
+   font-size: 1rem;
+   text-align: center;
+   color: var(--Grayish-blue);
+   text-transform: uppercase;
+   letter-spacing: 4px;
+   font-weight: 900;
+}
+.testinomials-cards{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cards{
+  width:330px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cards img{
+  height:80px;
+  width:80px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+.cards p{
+  font-size: 1rem;
+  color:var(--Very-dark-grayish-blue);
+  line-height: 1.5;
+  padding:0 2%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.cards h4{
+  font-family: 'Fraunces',serif;
+  font-size: 1rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.cards span{
+  font-size: 1rem;
+  color:var(--Grayish-blue);
+  margin-bottom: 80px;
+}
+@media screen and (min-width:650px){
+  .testinomials{
+    padding:90px;
+  }
+ .testinomials-cards{
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: wrap;
+ }
+ .cards img{
+   height:60px;
+   width:60px;
+ }
+}
+/* image gallery styling starts here */
+.image-gallery{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+
+}
+.image-gallery img{
+  width:100%;
+}
+@media screen and (min-width:650px){
+  .image-gallery{
+   grid-template-columns: auto auto auto auto;
+   grid-template-rows: auto;
+  }
+}
+
+/* footer styling starts here */
+footer{
+  background-color:var(--Dark-moderate-cyan);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:20% 5%;
+
+}
+.logo-span{
+  color: #2C7566;
+  fill:currentColor;
+}
+.footer-logo{
+  fill:currentColor;
+  margin:auto;
+  margin-bottom: 40px;
+}
+.page-links{
+  width:300px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 80px;
+}
+.page-links li a{
+  color:#2C7566;
+  font-size: 1rem;
+}
+.social-links{
+  display: flex;
+  justify-content: space-around;
+  width:200px;
+}
+@media screen and (min-width:500px){
+  footer{
+    padding:10%;
+  }
+  .page-links{
+    width:400px;
+  }
+}
